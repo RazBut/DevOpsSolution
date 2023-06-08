@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-kubernetes
+spec:
+  selector:
+    matchLabels:
+      name: devops-deploy
+  template:
+    metadata:
+      labels:
+        name: devops-deploy
+    spec:
+      containers:
+      - name: app
+        image: first-app:1.0.0
+        ports:
+          - containerPort: 8080
